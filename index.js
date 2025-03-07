@@ -69,7 +69,7 @@ const numberRecursion = (num) => {
 };
 console.log(numberRecursion(5));
 
-// Part 2: Thinking Methodically
+// Part 2: Thinking Methodically +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // =============================================
 
 const dataOfObjects = [
@@ -102,7 +102,7 @@ const dataManupulations = (dataOfObjects) => {
 
 dataManupulations(dataOfObjects);
 
-// Part 3: Thinking Critically
+// Part 3: Thinking Critically +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ====================================================================
 const randomObject = [
   { name: "ROB", age: 33 },
@@ -132,7 +132,7 @@ console.log("Updated in place:", randomObject);
 const updatedCopies = randomObject.map(copyAndIncrementAge);
 console.log("New copies with updated age:", updatedCopies);
 
-//Part -- 4
+//Part -- 4 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ============================================================
 let userProfile = {
   name: "Jane Doe",
@@ -166,7 +166,7 @@ let newUserProfile = incrementUserAgeCopy(userProfile);
 console.log("Original User Profile (unchanged):", userProfile);
 console.log("New User Profile (copy):", newUserProfile);
 
-// Part 5: Thinking Back
+// Part 5: Thinking Back +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // ======================================================================
 // How many of the scripts could be turned into functions?
 // --- Most of the solution i use function
