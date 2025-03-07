@@ -134,7 +134,6 @@ console.log("New copies with updated age:", updatedCopies);
 
 //Part -- 4
 // ============================================================
-
 let userProfile = {
   name: "Jane Doe",
   age: 28,
@@ -166,3 +165,17 @@ console.log("Updated User Profile (in place):", userProfile);
 let newUserProfile = incrementUserAgeCopy(userProfile);
 console.log("Original User Profile (unchanged):", userProfile);
 console.log("New User Profile (copy):", newUserProfile);
+
+// Part 5: Thinking Back
+// ======================================================================
+// How many of the scripts could be turned into functions?
+// --- Most of the solution i use function
+
+// What would the parameters look like? What kind of returns should they have?
+// ----function receive the input as a parameters. function return or console log the value of the answer based of data type.
+
+//Could you package your code into even smaller blocks, creating helper functions?
+// ----Yes I can. I can make it more clean.
+
+//What else could be changed to optimize the code, knowing what you now know?
+//--- I need to think about the Time Complexity and Space Complexity
