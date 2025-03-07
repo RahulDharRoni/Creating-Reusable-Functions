@@ -85,14 +85,13 @@ const dataManupulations = (dataOfObjects) => {
     (a, b) => parseInt(a.age) - parseInt(b.age)
   );
 
-  const ageUper50 = sortedByAge.filter((ages) => ages.age > 50);
-  //   console.log(dataOfObjects);
-  //   console.log(ageUper50);
-
-  dataOfObjects.map((data) => {
-    console.log(parseInt(data.age) + 1);
-  });
-  console.log(dataOfObjects);
+  const upDatedData = sortedByAge.map((data) => ({
+    id: data.id,
+    name: data.name,
+    job: data.occupation,
+    age: (parseInt(data.age) + 1).toString(),
+  }));
+  console.log(upDatedData);
 };
 
 dataManupulations(dataOfObjects);
