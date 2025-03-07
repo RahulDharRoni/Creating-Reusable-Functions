@@ -1,5 +1,5 @@
-// Part-1
-// ====================================================
+// Part-1 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//====================================================
 const arrayOfNumber = [20, 30, 40, 50, 60];
 function sum(numbers) {
   let sumUp = 0;
@@ -11,7 +11,7 @@ function sum(numbers) {
   return average; // return the average of the array of Number
 }
 console.log(sum(arrayOfNumber));
-// =============================================
+//=====================================================================
 const arrayOfStrings = [
   "Take an array of numbers and return the sum",
   "Take an array of strings and return the longest string.",
@@ -34,7 +34,7 @@ const longestStringLength = (stringValue) => {
 };
 
 console.log(longestStringLength(arrayOfStrings));
-// ==================================================
+//====================================================================
 const longestString = (stringValue) => {
   for (let i = 0; i < stringValue.length; i++) {
     for (let j = i + 1; j < stringValue.length; j++) {
@@ -50,7 +50,7 @@ const longestString = (stringValue) => {
   }
 };
 longestString(arrayOfStrings);
-// =============================================
+//=====================================================================
 
 const stringsLongerThan = (value, number) => {
   for (let i = 0; i < value.length; i++) {
@@ -61,3 +61,38 @@ const stringsLongerThan = (value, number) => {
 };
 
 stringsLongerThan(["say", "hello", "in", "the", "morning"], 3);
+//==============================================================
+const numberRecursion = (num) => {
+  for (let i = 0; i <= num; i++) {
+    console.log(i);
+  }
+};
+console.log(numberRecursion(5));
+
+// Part 2: Thinking Methodically
+// =============================================
+
+const dataOfObjects = [
+  { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+  { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+  { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+  { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+  { id: "7", name: "Bilbo", occupation: "None", age: "111" },
+];
+
+const dataManupulations = (dataOfObjects) => {
+  const sortedByAge = dataOfObjects.sort(
+    (a, b) => parseInt(a.age) - parseInt(b.age)
+  );
+
+  const ageUper50 = sortedByAge.filter((ages) => ages.age > 50);
+  //   console.log(dataOfObjects);
+  //   console.log(ageUper50);
+
+  dataOfObjects.map((data) => {
+    console.log(parseInt(data.age) + 1);
+  });
+  console.log(dataOfObjects);
+};
+
+dataManupulations(dataOfObjects);
