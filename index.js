@@ -135,3 +135,38 @@ console.log(thinkingCriticallyData[0]);
 
 let copiedObject = incrementAgeCopy(thinkingCriticallyData[1]);
 console.log(copiedObject);
+
+//Part -- 4
+// ==================================================
+
+let userProfile = {
+  name: "Jane Doe",
+  age: 28,
+  email: "janedoe@example.com",
+  updated_at: new Date("2025-03-01T12:00:00Z"),
+};
+
+function incrementUserAgeInPlace(user) {
+  if (user.age === undefined) {
+    user.age = 0;
+  }
+  user.age += 1;
+  user.updated_at = new Date();
+}
+
+function incrementUserAgeCopy(user) {
+  let userCopy = { ...user };
+  if (userCopy.age === undefined) {
+    userCopy.age = 0;
+  }
+  userCopy.age += 1;
+  userCopy.updated_at = new Date();
+  return userCopy;
+}
+
+incrementUserAgeInPlace(userProfile);
+console.log("Updated User Profile (in place):", userProfile);
+
+let newUserProfile = incrementUserAgeCopy(userProfile);
+console.log("Original User Profile (unchanged):", userProfile);
+console.log("New User Profile (copy):", newUserProfile);
