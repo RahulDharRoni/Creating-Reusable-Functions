@@ -101,3 +101,42 @@ const dataManupulations = (dataOfObjects) => {
 };
 
 dataManupulations(dataOfObjects);
+
+// Part 3: Thinking Critically
+// ====================================================================
+const thinkingCriticallyData = [
+  { age: "41" },
+  { age: "25" },
+  { age: "19" },
+  { age: "58" },
+  { age: "111" },
+];
+
+
+function incrementAgeInPlace(obj) {
+  if (obj.age === undefined) {
+    obj.age = 0; 
+  }
+  obj.age = parseInt(obj.age) + 1; /
+  obj.updated_at = new Date(); 
+}
+
+
+function incrementAgeCopy(obj) {
+  let copy = { ...obj };
+  if (copy.age === undefined) {
+    copy.age = 0; 
+  }
+  copy.age = parseInt(copy.age) + 1; 
+  copy.updated_at = new Date(); 
+  return copy;
+}
+
+
+incrementAgeInPlace(thinkingCriticallyData[0]);
+console.log(thinkingCriticallyData[0]); 
+
+
+let copiedObject = incrementAgeCopy(thinkingCriticallyData[1]);
+console.log(copiedObject); 
+
