@@ -92,6 +92,12 @@ const dataManupulations = (dataOfObjects) => {
     age: (parseInt(data.age) + 1).toString(),
   }));
   console.log(upDatedData);
+
+  const totalAgeAverage = upDatedData.reduce((accumulator, currentValue) => {
+    return accumulator + parseInt(currentValue.age);
+  }, 0);
+  const averageAge = totalAgeAverage / upDatedData.length;
+  console.log(averageAge);
 };
 
 dataManupulations(dataOfObjects);
