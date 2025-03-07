@@ -97,47 +97,43 @@ const dataManupulations = (dataOfObjects) => {
     return accumulator + parseInt(currentValue.age);
   }, 0);
   const averageAge = totalAgeAverage / upDatedData.length;
-  console.log(averageAge);
+  console.log(`Average = ${averageAge}`);
 };
 
 dataManupulations(dataOfObjects);
 
 // Part 3: Thinking Critically
 // ====================================================================
-const thinkingCriticallyData = [
-  { age: "41" },
-  { age: "25" },
-  { age: "19" },
-  { age: "58" },
-  { age: "111" },
+const randomObject = [
+  { name: "ROB", age: 33 },
+  { name: "DOB", age: 30 },
+  { name: "Robin", old: 38 }, // Does not have "age", has "old" instead
 ];
 
-function incrementAgeInPlace(obj) {
-  if (obj.age === undefined) {
-    obj.age = 0;
-  }
-  obj.age = parseInt(obj.age) + 1;
-  obj.updated_at = new Date();
-}
+// Function to update the object in place
+const incrementAgeInPlace = (obj) => {
+  obj.age = typeof obj.age === "number" ? obj.age + 1 : 0; // If age exists, increment; else set to 0
+  obj.updated_at = new Date(); // Set the updated_at field
+};
 
-function incrementAgeCopy(obj) {
-  let copy = { ...obj };
-  if (copy.age === undefined) {
-    copy.age = 0;
-  }
-  copy.age = parseInt(copy.age) + 1;
-  copy.updated_at = new Date();
-  return copy;
-}
+// Function to create a copy, increment age, and return the copy
+const copyAndIncrementAge = (obj) => {
+  const newObj = { ...obj }; // Copy the object
+  newObj.age = typeof newObj.age === "number" ? newObj.age + 1 : 0; // If age exists, increment; else set to 0
+  newObj.updated_at = new Date(); // Set the updated_at field
+  return newObj;
+};
 
-incrementAgeInPlace(thinkingCriticallyData[0]);
-console.log(thinkingCriticallyData[0]);
+// Apply the function in place
+randomObject.forEach(incrementAgeInPlace);
+console.log("Updated in place:", randomObject);
 
-let copiedObject = incrementAgeCopy(thinkingCriticallyData[1]);
-console.log(copiedObject);
+// Create a new array with updated copies
+const updatedCopies = randomObject.map(copyAndIncrementAge);
+console.log("New copies with updated age:", updatedCopies);
 
 //Part -- 4
-// ==================================================
+// ============================================================
 
 let userProfile = {
   name: "Jane Doe",
